@@ -9,7 +9,7 @@ import { uploadValidation, validateFileUpload } from '../utils/validation.js';
 import { Quiz } from '../models/Quiz.js';
 import { config } from '../config/index.js';
 import { logger } from '../utils/logger.js';
-import { Content } from '../models/content.js';
+import { Content } from '../models/Content.js';
 import fs from 'fs/promises';
 
 const router = express.Router();

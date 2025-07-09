@@ -297,7 +297,8 @@ Guidelines:
       }
 
       // Validate each question
-      parsed.questions = parsed.questions.filter(q => this.validateQuestion(q));
+      parsed.questions = parsed.questions.filter((q: any) => this.validateQuestion(q));
+
 
       if (parsed.questions.length === 0) {
         throw new Error('No valid questions found in response');

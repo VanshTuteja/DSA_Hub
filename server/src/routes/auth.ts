@@ -573,7 +573,7 @@ router.get('/test-email', async (req, res) => {
     const result = await testEmailService();
     res.status(200).json(result);
   } catch (err) {
-    res.status(500).json({ success: false, message: err.message });
+    res.status(500).json({ success: false, message: "err.message" });
   }
 });
 
