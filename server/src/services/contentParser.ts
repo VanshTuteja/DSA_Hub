@@ -14,7 +14,7 @@ import { promisify } from 'util';
 import { fileURLToPath } from 'url';
 
 // const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 const execAsync = promisify(exec);
 

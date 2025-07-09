@@ -15,7 +15,7 @@ const whisperService_js_1 = require("./whisperService.js");
 const child_process_1 = require("child_process");
 const util_1 = require("util");
 // const __filename = fileURLToPath(import.meta.url);
-const __dirname = path_1.default.resolve();
+// const __dirname = path.resolve();
 const execAsync = (0, util_1.promisify)(child_process_1.exec);
 class ContentParserService {
     constructor() {

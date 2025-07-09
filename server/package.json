@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Backend for DSA Quiz Application with Content Parsing, Ollama Integration, and MongoDB",
   "main": "dist/server.js",
-  "type": "module",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
