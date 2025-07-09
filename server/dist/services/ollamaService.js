@@ -16,9 +16,9 @@ class OllamaService {
     async checkHealth() {
         try {
             const models = await this.ollama.list();
-            const modelExists = models.models.some(model => model.name.includes(index_js_1.config.ollama.model.split(':')[0]));
+            const modelExists = models.models.some((model) => model.name.includes(index_js_1.config.ollama.model.split(':')[0]));
             if (!modelExists) {
-                logger_js_1.logger.warn(`Model ${index_js_1.config.ollama.model} not found. Available models:`, models.models.map(m => m.name));
+                logger_js_1.logger.warn(`Model ${index_js_1.config.ollama.model} not found. Available models:`, models.models.map((m) => m.name));
                 return false;
             }
             return true;

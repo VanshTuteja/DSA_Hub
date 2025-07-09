@@ -4,7 +4,7 @@ import { logger } from '../utils/logger.js';
 import { OllamaQuizResponse } from '../types/index.js';
 
 export class OllamaService {
-  private ollama: Ollama;
+  private ollama:any;
 
   constructor() {
     this.ollama = new Ollama({
@@ -18,13 +18,13 @@ export class OllamaService {
   async checkHealth(): Promise<boolean> {
     try {
       const models = await this.ollama.list();
-      const modelExists = models.models.some(model =>
+      const modelExists = models.models.some((model: { name: string | string[]; }) =>
         model.name.includes(config.ollama.model.split(':')[0])
       );
 
       if (!modelExists) {
         logger.warn(`Model ${config.ollama.model} not found. Available models:`,
-          models.models.map(m => m.name));
+          models.models.map((m: { name: any; }) => m.name));
         return false;
       }
 

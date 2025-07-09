@@ -63,7 +63,7 @@ export class ContentParserService {
       const optimizedImagePath = await this.optimizeImageForOCR(filePath);
 
       const { data: { text } } = await Tesseract.recognize(optimizedImagePath, 'eng', {
-        logger: (m) => {
+        logger: (m: { status: string; progress: number; }) => {
           if (m.status === 'recognizing text') {
             logger.info(`OCR Progress: ${Math.round(m.progress * 100)}%`);
           }
