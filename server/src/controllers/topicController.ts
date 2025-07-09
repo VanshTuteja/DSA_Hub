@@ -1,6 +1,4 @@
 import { Request, Response } from 'express';
-import { validationResult } from 'express-validator';
-import { ITopic } from '../types';
 import { UserTopic } from '../models/UserTopic';
 import {IStandaredQuizAttempt, StandaredQuizAttempt} from '../models/StandaredQuizAttempt';
 import { User } from '../models/User';
