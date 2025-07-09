@@ -1,0 +1,21 @@
+
+
+ ●  A quiz (5/10/15/20 questions per prerequisite) is generated using an  AI API  . 
+ ●  Users answer the questions within a time limit and click  Submit  . 
+  Score Analysis & Feedback 
+ ●  Each topic has a threshold (e.g., ≥3/5 or 10/15 or 12/15correct). Based on quiz 
+ performance: 
+ ○  ✅  Above threshold  : That topic is marked as  “Mastered”  in the user's profile. 
+ ○  ❌  Below threshold  : 
+ ■  AI generates a  capsule summary  of that weak concept  for revision. 
+ ■  The user can  retake  the quiz for that specific topic. 
+ ■  The system also  suggests new topics  that are within  the scope of 
+ mastered prerequisites. 
+  Ready for Learning Target Topic 
+ ●  Once all prerequisites are mastered, a message appears stating the user is "  Ready to 
+ Learn the Topic  ." 
+  User Profile 
+ ●  Tracks and displays: 
+ ○  ✅ List of mastered topics 
+ ○   “Start from Scratch” to reset all progress 
+ ○   Interactive  concept graph  view to see topic relationships 
