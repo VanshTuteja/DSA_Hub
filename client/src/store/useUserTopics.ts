@@ -1,5 +1,4 @@
 import type { CustomContent, Topic, UploadProgress, QuizState, QuizScore, QuizAttempt, Quiz } from "@/interface/types";
-import apiService from "@/services/api";
 import axios from "axios";
 import { toast } from "sonner";
 import { create } from "zustand";

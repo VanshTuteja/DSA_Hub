@@ -1,27 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { 
   Brain, 
   FileQuestion, 
   LineChart, 
-  Sparkles, 
   TrendingUp, 
   Zap, 
   Clock, 
-  Users, 
-  Target, 
   CheckCircle, 
   ArrowRight, 
   Play, 
-  Code, 
   BookOpen,
   type LucideIcon
 } from 'lucide-react';
-
-interface AnimatedStats {
-  users: number;
-  problems: number;
-  accuracy: number;
-}
 
 interface DemoContent {
   title: string;
@@ -48,25 +38,8 @@ type DemoType = 'mapping' | 'quiz' | 'analytics';
 
 const PolishedDemoComponent: React.FC = () => {
   const [activeDemo, setActiveDemo] = useState<DemoType>('mapping');
-  const [animatedStats, setAnimatedStats] = useState<AnimatedStats>({ 
-    users: 0, 
-    problems: 0, 
-    accuracy: 0 
-  });
 
-  // Animate stats on mount
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimatedStats(prev => ({
-        users: prev.users < 15420 ? prev.users + 123 : 15420,
-        problems: prev.problems < 2840 ? prev.problems + 47 : 2840,
-        accuracy: prev.accuracy < 94 ? prev.accuracy + 1 : 94
-      }));
-    }, 50);
 
-    setTimeout(() => clearInterval(interval), 2000);
-    return () => clearInterval(interval);
-  }, []);
 
   const demos: DemoData = {
     mapping: {

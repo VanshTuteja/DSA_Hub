@@ -7,7 +7,6 @@ import {
   Target,
   Camera,
   X,
-  BarChart3,
   Home,
 } from 'lucide-react';
 import {

@@ -1,6 +1,6 @@
 import { useUserStore } from "@/store/useUserStore";
-import { Camera, Save, User, X, Trash2, Upload, ImagePlus, Loader2, LoaderCircle } from "lucide-react";
-import { useMemo, useRef, useState } from "react";
+import { Save, User, X, Trash2, Loader2} from "lucide-react";
+import { useMemo } from "react";
 
 type ProfileModalProps = {
   show: boolean;
@@ -22,9 +22,6 @@ const ProfileModal: React.FC<ProfileModalProps> = ({
   user
 }) => {
   if (!show) return null;
-
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [showPhotoOptions, setShowPhotoOptions] = useState(false);
   const {loading} = useUserStore();
   // Helper function to safely compare values
   const isEqual = (val1: any, val2: any) => {

@@ -3,8 +3,6 @@ import { createJSONStorage, persist } from "zustand/middleware";
 import axios from "axios";
 import { loginSchema as LoginInputState, signupSchema as SignupInputState } from "../schema/userSchema";
 import { toast } from "sonner";
-import apiService from "@/services/api";
-import type { Topic } from "@/interface/types";
 
 const API_END_POINT = "http://localhost:3001/api/auth";
 axios.defaults.withCredentials = true;

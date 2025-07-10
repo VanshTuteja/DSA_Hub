@@ -281,7 +281,7 @@
 
 
 import React from 'react';
-import { Play, Lock, RotateCcw, CheckCircle, Clock, Trophy, ArrowRight, BookOpen, Target, Eye, Sparkles } from 'lucide-react';
+import { Play, Lock,  CheckCircle, Clock, Trophy, ArrowRight, BookOpen,  Eye, Sparkles } from 'lucide-react';
 import type { QuizAttempt, Topic } from '@/interface/types';
 
 
@@ -301,8 +301,6 @@ const TopicCard: React.FC<TopicCardProps> = ({
   status,
   onStartQuiz,
   onReview,
-  onRetake,
-  hasQuizHistory,
   topics,
   attempts
 }) => {

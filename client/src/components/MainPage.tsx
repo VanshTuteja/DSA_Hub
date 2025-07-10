@@ -15,7 +15,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "./ui/dialog";
-import { useQuizStore } from '../store/useQuizStore';
 import { toast } from 'sonner';
 import { useUserStore } from '@/store/useUserStore';
 import { useUserTopicsStore } from '@/store/useUserTopics';
@@ -23,11 +22,6 @@ import Navbar from './Navbar';
 import { PrerequisiteDialog } from './PrerequisiteDialog';
 
 const MainPage: React.FC = () => {
-  // Zustand store
-  const {
-    error,
-    clearError,
-  } = useQuizStore();
 
   const { topics, currentQuiz, loading
     , customContents,
@@ -118,13 +112,6 @@ const MainPage: React.FC = () => {
     }
   };
 
-  // Clear error when component mounts
-  React.useEffect(() => {
-    if (error) {
-      toast.error(error);
-      clearError();
-    }
-  }, [error, clearError]);
 
   // Watch for quiz state changes
   React.useEffect(() => {

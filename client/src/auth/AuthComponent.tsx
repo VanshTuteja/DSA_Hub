@@ -17,7 +17,6 @@ import { useUserStore } from '@/store/useUserStore';
 import { useUserTopicsStore } from '@/store/useUserTopics';
 
 const AuthComponent: React.FC<AuthComponentProps> = ({
-  onGoogleAuth,
   isOpen,
   setIsOpen,
 }) => {
@@ -115,17 +114,6 @@ const AuthComponent: React.FC<AuthComponentProps> = ({
     });
   };
 
-  const handleGoogleAuth = async () => {
-    setError('');
-
-    try {
-      await new Promise(resolve => setTimeout(resolve, 800));
-      onGoogleAuth?.();
-      console.log('Google authentication initiated');
-    } catch {
-      setError('Google authentication failed. Please try again.');
-    }
-  };
 
   const toggleMode = () => {
     setIsLogin(!isLogin);

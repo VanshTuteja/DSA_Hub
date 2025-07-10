@@ -1,5 +1,4 @@
-import React from 'react';
-import { Menu, Home, User, LogOut, Upload, BookOpen, FileText, Brain, Target, Award, ChevronRight } from 'lucide-react';
+import { Menu, Home, User, LogOut, Brain, Target, Award, ChevronRight } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -7,7 +6,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import type { CustomContent, Topic, UserProfile } from '@/interface/types';
+import type { UserProfile } from '@/interface/types';
 import { useNavigate } from 'react-router-dom';
 import { useUserStore } from '@/store/useUserStore';
 import { ThemeToggle } from './ThemeToggle';

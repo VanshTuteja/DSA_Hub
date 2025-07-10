@@ -1,14 +1,11 @@
 {
-  "name": "server",
+  "name": "dsa-hub",
   "version": "1.0.0",
-  "description": "Backend for DSA Quiz Application with Content Parsing, Ollama Integration, and MongoDB",
-  "main": "dist/server.js",
+  "description": "Fullstack DSA Quiz App with Vite React frontend and Node.js backend using MongoDB, Ollama, FFmpeg, etc.",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js",
-    "test": "jest",
-    "postinstall": "node -e \"try { require('child_process').execSync('ffmpeg -version', {stdio: 'ignore'}); } catch(e) { console.warn('FFmpeg not found. Install it for full functionality.'); }\""
+    "dev": "nodemon server/index.ts",
+    "build":"npm install && npm install --prefix client && npm run build --prefix client",
+    "start":"nodemon server/index.ts"
   },
   "dependencies": {
     "@google-cloud/speech": "^7.1.0",

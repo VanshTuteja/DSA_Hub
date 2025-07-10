@@ -121,10 +121,6 @@ app.use((error: any, req: express.Request, res: express.Response, next: express.
 
 
 app.use(express.static(path.join(DIRNAME,"/client/dist")));
-// 404 handler
-// app.use('*', (req, res) => {
-//   res.status(404).json({ error: 'Route not found' });
-// });
 app.use("*",(_,res) => {
     res.sendFile(path.resolve(DIRNAME, "client","dist","index.html"));
 });

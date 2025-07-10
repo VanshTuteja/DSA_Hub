@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Trophy, Clock, Target, RotateCcw, Eye, ArrowRight } from 'lucide-react';
+import { CheckCircle, Trophy, Clock, Target, RotateCcw,ArrowRight } from 'lucide-react';
 import type { QuizState } from '@/interface/types';
 
 interface QuizResultsProps {
@@ -79,7 +79,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({
             )}
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold  dark:text-white mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
             {scoreMessage}
           </h1>
           

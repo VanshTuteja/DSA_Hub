@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen, CheckCircle, Play, Settings, Menu, LineChart } from 'lucide-react';
+import { BookOpen, CheckCircle, Play,Menu } from 'lucide-react';
 import AuthComponent from '@/auth/AuthComponent';
 import { features, steps } from './data/homePageData';
 import {
@@ -10,7 +10,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { ThemeToggle } from './ThemeToggle';
-import DSADependencyMappingDemo from './DSADependencyMappingDemo';
 import PolishedDemoComponent from './Demo';
 
 interface FeatureCardProps {
@@ -49,7 +48,6 @@ const Step: React.FC<StepProps> = ({ number, title, description }) => (
 );
 
 const HomePage: React.FC = () => {
-  const [activeDemo, setActiveDemo] = useState('concept');
   const [isOpen, setIsOpen] = useState(false);
    const [activeItem, setActiveItem] = useState('home');
 
