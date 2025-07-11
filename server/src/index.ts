@@ -11,7 +11,9 @@ import topicRoutes from '../src/routes/topic';
 import config from './config/index';
 import { logger } from './utils/logger';
 import { dbConnection } from './database/connection';
+import dotenv from 'dotenv';
 
+dotenv.config(); 
 const app = express();
 
 const DIRNAME = path.resolve();
