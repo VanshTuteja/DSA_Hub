@@ -17,7 +17,7 @@ export const config = {
   },
   
   ollama: {
-    baseUrl: process.env.OLLAMA_BASE_URL || 'https://1e9a6c80c226.ngrok-free.app',
+    baseUrl: process.env.OLLAMA_BASE_URL || 'https://281c8f1d2638.ngrok-free.app',
     model: process.env.OLLAMA_MODEL || 'llama3.1:8b',
   },
   
