@@ -1,15 +1,15 @@
 import express from 'express';
 import { v4 as uuidv4 } from 'uuid';
-import { upload } from '../middleware/upload.js';
-import { authenticateToken, AuthRequest } from '../middleware/auth.js';
-import { ContentParserService } from '../services/contentParser.js';
-import { QuizGeneratorService } from '../services/quizGenerator.js';
-import { OllamaService } from '../services/ollamaService.js';
-import { uploadValidation, validateFileUpload } from '../utils/validation.js';
-import { Quiz } from '../models/Quiz.js';
-import { config } from '../config/index.js';
-import { logger } from '../utils/logger.js';
-import { Content } from '../models/Content.js';
+import { upload } from '../middleware/upload';
+import { authenticateToken, AuthRequest } from '../middleware/auth';
+import { ContentParserService } from '../services/contentParser';
+import { QuizGeneratorService } from '../services/quizGenerator';
+import { OllamaService } from '../services/ollamaService';
+import { uploadValidation, validateFileUpload } from '../utils/validation';
+import { Quiz } from '../models/Quiz';
+import { config } from '../config/index';
+import { logger } from '../utils/logger';
+import { Content } from '../models/Content';
 import fs from 'fs/promises';
 
 const router = express.Router();

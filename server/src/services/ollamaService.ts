@@ -1,7 +1,7 @@
 import { Ollama } from 'ollama';
-import { config } from '../config/index.js';
-import { logger } from '../utils/logger.js';
-import { OllamaQuizResponse } from '../types/index.js';
+import { config } from '../config/index';
+import { logger } from '../utils/logger';
+import { OllamaQuizResponse } from '../types/index';
 
 export class OllamaService {
   private ollama:any;

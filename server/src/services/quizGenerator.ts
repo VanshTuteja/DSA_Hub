@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
-import { QuizQuestion, GeneratedQuiz } from '../types/index.js';
-import { config } from '../config/index.js';
-import { logger } from '../utils/logger.js';
-import { OllamaService } from './ollamaService.js';
+import { QuizQuestion, GeneratedQuiz } from '../types/index';
+import { config } from '../config/index';
+import { logger } from '../utils/logger';
+import { OllamaService } from './ollamaService';
 
 export class QuizGeneratorService {
   private ollamaService: OllamaService;

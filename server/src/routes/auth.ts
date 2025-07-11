@@ -1,12 +1,12 @@
 import express from 'express';
-import { User } from '../models/User.js';
-import { generateToken, authenticateToken, AuthRequest } from '../middleware/auth.js';
-import { authValidation } from '../utils/validation.js';
-import { logger } from '../utils/logger.js';
 import crypto from 'crypto';
-import { sendVerificationEmail, sendResetPasswordEmail, testEmailService, sendWelcomeEmail, sendResetSuccessEmail } from '../utils/emailService.js'; // Assuming you have email service
-import { generateVerificationCode } from '../utils/generateVerificationCode.js';
-import cloudinary from '../utils/cloudinary.js';
+import { User } from '../models/User';
+import { generateToken, authenticateToken, AuthRequest } from '../middleware/auth';
+import { authValidation } from '../utils/validation';
+import { logger } from '../utils/logger';
+import {sendVerificationEmail, sendResetPasswordEmail, testEmailService, sendWelcomeEmail, sendResetSuccessEmail } from '../utils/emailService';
+import { generateVerificationCode } from '../utils/generateVerificationCode';
+import cloudinary from '../utils/cloudinary';
 
 const router = express.Router();
 

@@ -4,14 +4,13 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import path from 'path';
 import fs from 'fs';
-import { config } from './config/index.js';
-import { logger } from './utils/logger.js';
-import { dbConnection } from './database/connection.js';
-import authRoutes from './routes/auth.js';
-import contentRoutes from './routes/content.js';
-// import quizRoutes from './routes/quiz.js';
+import authRoutes from './routes/auth';
+import contentRoutes from '../src/routes/content';
 import cookieParser from "cookie-parser";
-import topicRoutes from './routes/topic.js';
+import topicRoutes from '../src/routes/topic';
+import config from './config/index';
+import { logger } from './utils/logger';
+import { dbConnection } from './database/connection';
 
 const app = express();
 
@@ -23,7 +22,19 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser());
 // Security middleware
-app.use(helmet());
+// app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      imgSrc: ["'self'", "data:", "https://res.cloudinary.com"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      connectSrc: ["'self'", "https:"],
+      // Add others as needed (e.g., fontSrc, frameSrc)
+    },
+  })
+);
 app.use(cors({
   origin: config.cors.origin,
   credentials: true

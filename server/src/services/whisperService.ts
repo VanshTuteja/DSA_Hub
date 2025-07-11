@@ -1,9 +1,9 @@
 import { spawn } from 'child_process';
 import path from 'path';
 import fs from 'fs/promises';
-import { config } from '../config/index.js';
-import { logger } from '../utils/logger.js';
-import { TranscriptionResult } from '../types/index.js';
+import { config } from '../config/index';
+import { logger } from '../utils/logger';
+import { TranscriptionResult } from '../types/index';
 
 export class WhisperService {
   

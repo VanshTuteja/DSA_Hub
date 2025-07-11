@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { logger } from './logger.js';
+import { logger } from './logger';
 
 // Email configuration
 const EMAIL_CONFIG = {

@@ -2,10 +2,11 @@
   "name": "dsa-hub",
   "version": "1.0.0",
   "description": "Fullstack DSA Quiz App with Vite React frontend and Node.js backend using MongoDB, Ollama, FFmpeg, etc.",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon server/index.ts",
-    "build": "npm install && npm install --prefix client && npm run build --prefix client",
-    "start": "nodemon server/index.ts"
+    "dev": "nodemon server/src/index.ts",
+    "build":"npm install && npm install --prefix client && npm run build --prefix client",
+    "start":"nodemon server/src/index.ts"
   },
   "dependencies": {
     "@google-cloud/speech": "^7.1.0",

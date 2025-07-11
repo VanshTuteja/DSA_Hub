@@ -94,9 +94,9 @@ const UserProfileDropdown: React.FC = () => {
               className="relative w-12 h-12 rounded-full flex items-center justify-center overflow-hidden group cursor-pointer"
             >
 
-              {userProfile.avatar != "" ? (
+              {user?.profile.profilePicture && user?.profile.profilePicture != "" ? (
                 <img
-                  src={userProfile.avatar}
+                  src={user?.profile.profilePicture}
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
@@ -119,7 +119,7 @@ const UserProfileDropdown: React.FC = () => {
               <div
                 className="relative w-14 h-14 rounded-full overflow-hidden cursor-pointer group"
               >
-                {user?.profile.profilePicture != "" ? (
+                {user?.profile.profilePicture && user?.profile.profilePicture != "" ? (
                   <img
                     src={user?.profile.profilePicture}
                     alt="Profile"

@@ -72,6 +72,8 @@ const Dashboard: React.FC = () => {
         profilePicture: user.profile.profilePicture || ''
       });
     }
+  console.log("User:", user);
+
   }, [showProfileModal, user]);
   // Helper functions for safe date formatting
   const formatDate = (date: Date | string | undefined): string => {
@@ -93,7 +95,6 @@ const Dashboard: React.FC = () => {
     try {
       await updateProfile(editData);
       setShowProfileModal(false);
-      toast.success("Profile updated successfully");
     } catch (error) {
       toast.error("Error updating profile");
     }
@@ -211,9 +212,10 @@ const Dashboard: React.FC = () => {
             {/* Profile Picture Section */}
             <div className="relative group">
               <div className="w-28 h-28 lg:w-36 lg:h-36 rounded-full overflow-hidden ring-4 ring-white/30 shadow-2xl group-hover:ring-blue-400/50 transition-all duration-300">
+              
                 {user?.profile.profilePicture ? (
                   <img
-                    src={user.profile.profilePicture}
+                    src={user?.profile.profilePicture}
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />

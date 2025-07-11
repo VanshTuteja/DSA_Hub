@@ -10,6 +10,7 @@ import Loading from './components/Loading';
 import Dashboard from './components/Dashboard';
 import PolishedDemoComponent from './components/Demo';
 import ResetPassword from './auth/ResetPassword';
+import React from 'react';
 
 const ProtectedRoutes = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated, user } = useUserStore();
@@ -50,7 +51,7 @@ const appRouter = createBrowserRouter([
     path: "/profile",
     element:
       <ProtectedRoutes>
-        <Dashboard />,
+          <Dashboard />
       </ProtectedRoutes>
   },
   {
@@ -60,8 +61,8 @@ const appRouter = createBrowserRouter([
   {
     path: "/bolt",
     element:
-    <PolishedDemoComponent/>
-      // <DSADependencyMappingDemo />,
+      <PolishedDemoComponent />
+    // <DSADependencyMappingDemo />,
 
   },
 
