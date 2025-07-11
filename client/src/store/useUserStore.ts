@@ -4,7 +4,7 @@ import axios from "axios";
 import { loginSchema as LoginInputState, signupSchema as SignupInputState } from "../schema/userSchema";
 import { toast } from "sonner";
 
-const API_END_POINT = "http://localhost:3001/api/auth";
+const API_END_POINT = "https://dsa-hub-h4qb.onrender.com/api/auth";
 axios.defaults.withCredentials = true;
 
 type User = {
@@ -70,8 +70,7 @@ export const useUserStore = create<UserState>()(persist((set) => ({
             if (response.data.success) {
                 // await apiService.initializeTopics(response.data.user.id);
                 const userId = response.data.user.id;
-                await axios.post(`http://localhost:3001/api/topic/initialize`,{ userId });
-                // const result = await axios.get(`http://localhost:3001/api/topic`);
+                await axios.post(`https://dsa-hub-h4qb.onrender.com/api/topic/initialize`,{ userId });
                 toast.success(response.data.message);
                 set({ loading: false, user: response.data.user, isAuthenticated: true });
             }

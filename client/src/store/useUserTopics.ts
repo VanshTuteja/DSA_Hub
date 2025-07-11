@@ -6,7 +6,7 @@ import { createJSONStorage, persist, devtools, subscribeWithSelector } from "zus
 import { useUserStore } from "./useUserStore";
 
 // const API_END_POINT = "https://food-app-yt.onrender.com/api/v1/restaurant";
-const API_END_POINT = "http://localhost:3001/api/topic";
+const API_END_POINT = "https://dsa-hub-h4qb.onrender.com/api/topic";
 axios.defaults.withCredentials = true;
 
 
@@ -135,7 +135,7 @@ export const useUserTopicsStore = create<TopicStore>()(
                     try {
                         set({ loading: true });
 
-                        const response = await axios.get("http://localhost:3001/api/content/content", {
+                        const response = await axios.get("https://dsa-hub-h4qb.onrender.com/api/content/content", {
                             params: {
                                 page: 1,
                                 limit: 50, // adjust limit as needed
@@ -209,7 +209,7 @@ export const useUserTopicsStore = create<TopicStore>()(
                             lastActivityDate: todayStr,
                         });
 
-                        await axios.put("http://localhost:3001/api/auth/profile/streak", {
+                        await axios.put("https://dsa-hub-h4qb.onrender.com/api/auth/profile/streak", {
                             streak: newStreak,
                             lastActivityDate: todayStr,
                         });
@@ -230,7 +230,7 @@ export const useUserTopicsStore = create<TopicStore>()(
                             lastActivityDate: todayStr,
                         });
 
-                        await axios.put("http://localhost:3001/api/auth/profile/streak", {
+                        await axios.put("https://dsa-hub-h4qb.onrender.com/api/auth/profile/streak", {
                             streak: newStreak,
                             lastActivityDate: todayStr,
                         });
@@ -246,7 +246,7 @@ export const useUserTopicsStore = create<TopicStore>()(
                         lastActivityDate: todayStr,
                     });
 
-                    await axios.put("http://localhost:3001/api/auth/profile/streak", {
+                    await axios.put("https://dsa-hub-h4qb.onrender.com/api/auth/profile/streak", {
                         streak: resetStreak,
                         lastActivityDate: todayStr,
                     });
@@ -562,7 +562,7 @@ export const useUserTopicsStore = create<TopicStore>()(
                         formData.append('file', file);
                         switch (type) {
                             case 'pdf': {
-                                const response = await axios.post('http://localhost:3001/api/content/upload/pdf', formData, {
+                                const response = await axios.post('https://dsa-hub-h4qb.onrender.com/api/content/upload/pdf', formData, {
                                     headers: {
                                         'Content-Type': 'multipart/form-data',
                                     },
@@ -572,7 +572,7 @@ export const useUserTopicsStore = create<TopicStore>()(
                             }
                             case 'image': {
                                 // result = await apiService.uploadImage(file, fileTitle);
-                                const response = await axios.post('http://localhost:3001/api/content/upload/image', formData, {
+                                const response = await axios.post('https://dsa-hub-h4qb.onrender.com/api/content/upload/image', formData, {
                                     headers: {
                                         'Content-Type': 'multipart/form-data',
                                     },
@@ -582,7 +582,7 @@ export const useUserTopicsStore = create<TopicStore>()(
                             }
                             case 'video': {
                                 // result = await apiService.uploadVideo(file, fileTitle);
-                                const response = await axios.post('http://localhost:3001/api/content/upload/video', formData, {
+                                const response = await axios.post('https://dsa-hub-h4qb.onrender.com/api/content/upload/video', formData, {
                                     headers: {
                                         'Content-Type': 'multipart/form-data',
                                     },
@@ -681,7 +681,7 @@ export const useUserTopicsStore = create<TopicStore>()(
 
                         // Call actual backend API
                         // const result = await apiService.uploadYoutube(url, title);
-                        const response = await axios.post('http://localhost:3001/api/content/upload/youtube', { url, title });
+                        const response = await axios.post('https://dsa-hub-h4qb.onrender.com/api/content/upload/youtube', { url, title });
                         const result = response.data;
                         const actualContentId = result.contentId;
 
@@ -740,7 +740,7 @@ export const useUserTopicsStore = create<TopicStore>()(
                 deleteContent: async (contentId: string) => {
                     try {
                         // await apiService.deleteContent(contentId);
-                        await axios.delete(`http://localhost:3001/api/content/content/${contentId}`);
+                        await axios.delete(`https://dsa-hub-h4qb.onrender.com/api/content/content/${contentId}`);
                         set(state => ({
                             customContents: state.customContents.filter(content => content.id !== contentId),
                             quizzes: state.quizzes.filter(quiz => quiz.contentId !== contentId),
@@ -775,7 +775,7 @@ export const useUserTopicsStore = create<TopicStore>()(
                     }));
 
                     try {
-                        const res = await axios.post("http://localhost:3001/api/content/generate-prerequisites", {
+                        const res = await axios.post("https://dsa-hub-h4qb.onrender.com/api/content/generate-prerequisites", {
                             contentId,
                         });
 
@@ -829,7 +829,7 @@ export const useUserTopicsStore = create<TopicStore>()(
                         // Call actual backend API to generate quiz
                         // await apiService.generateQuiz(contentId, questionCount);
                         const difficulty = 'mixed';
-                        await axios.post('http://localhost:3001/api/content/generate-quiz', {
+                        await axios.post('https://dsa-hub-h4qb.onrender.com/api/content/generate-quiz', {
                             contentId,
                             questionCount,
                             difficulty,
@@ -838,7 +838,7 @@ export const useUserTopicsStore = create<TopicStore>()(
 
                         // // Fetch the actual quiz data from backend
                         // const quizData = await apiService.getQuiz(contentId);
-                        const response = await axios.get(`http://localhost:3001/api/content/quiz/${contentId}`);
+                        const response = await axios.get(`https://dsa-hub-h4qb.onrender.com/api/content/quiz/${contentId}`);
                         const quizData = response.data;
 
                         // Update content status and store quiz
@@ -894,7 +894,7 @@ export const useUserTopicsStore = create<TopicStore>()(
                         // let quiz = get().quizzes.find(q => q.contentId === contentId);
                         if (!quiz) {
                             // quiz = await apiService.getQuiz(contentId);
-                            const response = await axios.get(`http://localhost:3001/api/content/quiz/${contentId}`);
+                            const response = await axios.get(`https://dsa-hub-h4qb.onrender.com/api/content/quiz/${contentId}`);
                             quiz = response.data;
                         }
 
