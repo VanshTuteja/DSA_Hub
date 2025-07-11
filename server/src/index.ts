@@ -15,7 +15,7 @@ import { dbConnection } from './database/connection';
 const app = express();
 
 const DIRNAME = path.resolve();
-
+const PORT = process.env.PORT || 3001;
 // default middleware for any mern project
 // Body parsing middleware
 app.use(express.json({ limit: '10mb' }));
@@ -143,7 +143,7 @@ async function startServer() {
     await dbConnection.connect();
     
     // Start server
-    app.listen(config.port, () => {
+    app.listen(PORT, () => {
       logger.info(`Server running on port ${config.port} in ${config.nodeEnv} mode`);
       logger.info(`Upload directory: ${path.resolve(config.upload.uploadDir)}`);
       logger.info(`Temp directory: ${path.resolve(config.upload.tempDir)}`);
