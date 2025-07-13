@@ -8,7 +8,6 @@ import { useUserStore } from './store/useUserStore';
 import { useEffect } from 'react';
 import Loading from './components/Loading';
 import Dashboard from './components/Dashboard';
-import PolishedDemoComponent from './components/Demo';
 import ResetPassword from './auth/ResetPassword';
 import React from 'react';
 
@@ -58,15 +57,6 @@ const appRouter = createBrowserRouter([
     path: "/reset-password/:token",
     element: <ResetPassword />,
   },
-  {
-    path: "/bolt",
-    element:
-      <PolishedDemoComponent />
-    // <DSADependencyMappingDemo />,
-
-  },
-
-
 
 ]);
 
@@ -82,17 +72,6 @@ function App() {
 
   if (isCheckingAuth) return <Loading isVisible={false} />
 
-  //  const { initializeUser, isInitialized } = useQuizStore(state => ({
-  //   initializeUser: state.initializeUser,
-  //   isInitialized: state.isInitialized
-  // }));
-
-  // useEffect(() => {
-  //   // Initialize user data from backend on app start
-  //   if (!isInitialized) {
-  //     initializeUser();
-  //   }
-  // }, [initializeUser, isInitialized]);
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="dsa-hub-theme">

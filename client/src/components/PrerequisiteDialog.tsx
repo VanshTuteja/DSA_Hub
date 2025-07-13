@@ -34,10 +34,10 @@ export const PrerequisiteDialog: React.FC<Props> = ({ contentId, title }) => {
       setLoading(true);
       await generatePrerequisites(contentId);
     } catch (err) {
+      setOpen(false);
       toast.error("Failed to generate prerequisites.");
     } finally {
       setLoading(false);
-      setOpen(true); // open after successful fetch
     }
   };
 
